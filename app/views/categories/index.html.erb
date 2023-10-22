@@ -1,0 +1,17 @@
+<div style="color: #blue; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 24px;">
+  <i class="fa-solid fa-bars" style="font-size: inherit;"></i>
+</div>
+<h1> TRANSACTIONS </h1>
+<% if @categories.any? %>
+  <ul>
+    <% @categories.each do |category| %>
+      <li>
+  <%= category.name %> 
+  <img src="<%= asset_path('category_icons/' + category.icon) %>" alt="<%= category.name %> Icon">
+</li>
+
+    <% end %>
+  </ul>
+<% else %>
+  <p>No categories found.</p>
+<% end %>
