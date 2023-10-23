@@ -1,17 +1,42 @@
-<div style="color: #blue; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 24px;">
-  <i class="fa-solid fa-bars" style="font-size: inherit;"></i>
-</div>
-<h1> TRANSACTIONS </h1>
-<% if @categories.any? %>
-  <ul>
-    <% @categories.each do |category| %>
-      <li>
-  <%= category.name %> 
-  <img src="<%= asset_path('category_icons/' + category.icon) %>" alt="<%= category.name %> Icon">
-</li>
-
+<div class="container justify-content-center align-items-center">
+  <div>
+    <% if @categories.any? %>
+      <ul class="list-unstyled">
+        <% @categories.each do |category| %>
+          <li class="row mb-3">
+            <div class="col-md-8 col-12">
+              <div class="d-flex">
+                <div>
+                  <img class="icon" src="<%= asset_path('category_icons/' + category.icon) %>" alt="<%= category.name %> Icon">
+                </div>
+                <div class="ms-4 d-flex flex-column justify-content-center align-items-center">
+                  <div>
+                    <%= link_to category.name, category_path(category) %>
+                  </div>
+                  <div>
+                    <%= category.created_at.strftime('%d %b %Y') %>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-12 d-flex align-items-center justify-content-end">
+              <% total_amount = 0 %>
+              <% @payments.each do |payment| %>
+                <% if payment.category == category %>
+                  <% total_amount += payment.amount %>
+                <% end %>
+              <% end %>
+              <ul class="list-unstyled">
+                <li class="">
+                  $<%= total_amount %>
+                </li>
+              </ul>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No categories found.</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>No categories found.</p>
-<% end %>
+  </div>
+</div>
