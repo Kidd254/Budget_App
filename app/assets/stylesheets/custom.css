@@ -1,0 +1,19 @@
+@media (max-width: 767px) {
+  .no-wrap {
+    white-space: nowrap;
+  }
+}
+
+.top {
+  background-color: #3778c2;
+}
+
+.icon {
+  height: 128px;
+  width: 128px;
+  background-color: antiquewhite;
+}
+
+.bar {
+  font-size: 32px;
+}
