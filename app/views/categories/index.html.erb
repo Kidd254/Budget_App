@@ -7,7 +7,7 @@
             <div class="col-md-8 col-12">
               <div class="d-flex">
                 <div>
-                  <img class="icon" src="<%= asset_path('category_icons/' + category.icon) %>" alt="<%= category.name %> Icon">
+                  <img class="icon" src="/assets/category_icons/<%= category.icon %>" alt="<%= category.name %> Icon">
                 </div>
                 <div class="ms-4 d-flex flex-column justify-content-center align-items-center">
                   <div>
@@ -35,6 +35,12 @@
           </li>
         <% end %>
       </ul>
+
+      <!-- Add a button to create a new category below the category list -->
+      <div class="text-center mt-3">
+        <%= link_to 'New Category', new_category_path, class: 'btn btn-primary' %>
+      </div>
+
     <% else %>
       <p>No categories found.</p>
     <% end %>
