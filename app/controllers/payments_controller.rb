@@ -1,6 +1,7 @@
 class PaymentsController < ApplicationController
   before_action :authenticate_user!
   layout 'add_transaction', only: [:new]
+
   def new
     @payment = Payment.new
   end
