@@ -35,14 +35,11 @@
           </li>
         <% end %>
       </ul>
-
-      <!-- Add a button to create a new category below the category list -->
-      <div class="text-center mt-3">
-        <%= link_to 'New Category', new_category_path, class: 'btn btn-primary' %>
-      </div>
-
     <% else %>
       <p>No categories found.</p>
     <% end %>
+     <div class="text-center mt-3">
+        <%= link_to 'New Category', new_category_path, class: 'btn btn-primary' %>
+      </div>
   </div>
 </div>
