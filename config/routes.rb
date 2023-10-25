@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    sessions: 'sessions' # Remove 'users/' from here
+    sessions: 'sessions',
+    registrations: 'users/sessions/registrations'
   }
   
   get 'landing', to: 'welcome#landing'
