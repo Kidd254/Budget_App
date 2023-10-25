@@ -1,30 +1,19 @@
-# frozen_string_literal: true
-
 class Users::Sessions::ConfirmationsController < Devise::ConfirmationsController
-  # GET /resource/confirmation/new
-  # def new
-  #   super
-  # end
+  def resend
+    user = User.find_by(email: params[:email])
 
-  # POST /resource/confirmation
-  # def create
-  #   super
-  # end
-
-  # GET /resource/confirmation?confirmation_token=abcdef
-  # def show
-  #   super
-  # end
-
-  # protected
-
-  # The path used after resending confirmation instructions.
-  # def after_resending_confirmation_instructions_path_for(resource_name)
-  #   super(resource_name)
-  # end
-
-  # The path used after confirmation.
-  # def after_confirmation_path_for(resource_name, resource)
-  #   super(resource_name, resource)
-  # end
+    if user
+      if user.confirmed?
+        # The user is already confirmed, no need to resend instructions.
+        flash[:notice] = 'Your account is already confirmed.'
+      else
+        # Resend confirmation instructions.
+        user.send_confirmation_instructions
+        flash[:notice] = 'Confirmation instructions have been resent to your email.'
+      end
+    else
+      flash[:alert] = 'No user with that email address found.'
+    end
+    redirect_to root_path
+  end
 end
