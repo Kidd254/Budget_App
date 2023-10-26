@@ -10,15 +10,19 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= yield :stylesheets %>
     <%= stylesheet_link_tag "custom", media: 'all' %>
+    <% if controller_name == "categories" %>
+  <%= stylesheet_link_tag "categories", media: "all" %>
+<% end %>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="<%= controller_name == 'categories' ? 'categories-background' : '' %>">
     <% if user_signed_in? %>
       <header>
         <nav>
-          <div class="container-fluid pt-2 mb-3 top">
+          <div class="container-fluid pt-2 top">
             <div class="row">
               <div class="col-2">
                 <div class="menu-icon mt-1">
@@ -41,10 +45,10 @@
 
     <%= yield %>
 
-    <div class="container justify-content-center align-items-center">
+    <div class="container">
       <div class="col-md-12 col-12 text-right d-flex justify-content-end">
         <% if user_signed_in? %>
-          <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn btn-secondary btn-sm" %>
+          <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn btn-light btn-sm" %>
         <% else %>
         <% end %>
       </div>
