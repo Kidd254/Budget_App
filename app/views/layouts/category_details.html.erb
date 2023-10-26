@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Budget App!</title>
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= yield :stylesheets %>
+		<%= stylesheet_link_tag "custom", media: 'all' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <%= javascript_importmap_tags %>
+  </head>
+  <body style="background-color: #949494;">
+   
+
+<%= render partial: 'layouts/partials/navbar_category_details' %>
+    <div class="container">
+      <%= yield %>
+    </div>
+
+  </body>
+</html>
