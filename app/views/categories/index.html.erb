@@ -4,14 +4,14 @@
     <% if @categories.any? %>
       <ul class="list-unstyled">
         <% @categories.each do |category| %>
-          <li class="row mb-3 bg-light">
+          <li class="row mb-3 bg-light pt-2 pb-2">
             <div class="col-md-8 col-12">
               <div class="d-flex">
                 <div>
                   <img class="icon" src="/assets/category_icons/<%= category.icon %>" alt="<%= category.name %> Icon">
                 </div>
                 <div class="ms-4 d-flex flex-column justify-content-center align-items-center">
-                  <div>
+                  <div class="text-decoration-none">
                     <%= link_to category.name, category_path(category) %>
                   </div>
                   <div>
@@ -22,10 +22,8 @@
             </div>
             <div class="col-md-4 col-12 d-flex align-items-center justify-content-end">
               <% total_amount = 0 %>
-              <% @payments.each do |payment| %>
-                <% if payment.category == category %>
-                  <% total_amount += payment.amount %>
-                <% end %>
+              <% category.payments.each do |payment| %>
+                <% total_amount += payment.amount %>
               <% end %>
               <ul class="list-unstyled">
                 <li class="">
@@ -39,8 +37,8 @@
     <% else %>
       <p>No categories found.</p>
     <% end %>
-     <div class="text-center mt-3">
-        <%= link_to 'New Category', new_category_path, class: 'btn btn-primary' %>
-      </div>
+    <div class="text-center mt-3">
+      <%= link_to 'New Category', new_category_path, class: 'btn btn-primary' %>
+    </div>
   </div>
 </div>
