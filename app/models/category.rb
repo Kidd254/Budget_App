@@ -11,6 +11,8 @@ class Category < ApplicationRecord
     end
   end
 
+  private
+
   def set_description_once
     self.description = 'Default description' if description.blank?
   end
@@ -24,18 +26,4 @@ class Category < ApplicationRecord
     errors.add(:icon, 'has already been taken for this user')
   end
   # rubocop:enable Style/HashSyntax
-
-  private
-
-  def set_description_once
-    self.description = 'Default description' if description.blank?
-  end
-
-  def unique_name_and_icon_within_user
-    existing_categories = Category.where(author_id: author_id, name: name, icon: icon)
-    return unless existing_categories.any? && existing_categories.first != self
-
-    errors.add(:name, 'has already been taken for this user')
-    errors.add(:icon, 'has already been taken for this user')
-  end
 end
