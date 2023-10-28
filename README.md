@@ -9,7 +9,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [YouPayment App ](#MoneyMate-app-)
+- [MoneyMate App ](#MoneyMate-app-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -33,13 +33,13 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# YouPayment App <a name="about-project"></a>
+# MoneyMate App <a name="about-project"></a>
 
-**"YouPayment App"** YouPayment is a mobile budget app built with Rails 7 and PostgreSQL. It allows the user to record all their expense transactions and classify them by categories. This helps the user to keep effective, private and secure control of all the information on their expenses, and thus be able to make better decisions about money management.
+**"MoneyMate App"** MoneyMate is a mobile budget app built with Rails 7 and PostgreSQL. It allows the user to record all their expense transactions and classify them by categories. This helps the user to keep effective, private and secure control of all the information on their expenses, and thus be able to make better decisions about money management.
 
-**YouPayment** is easy to use and navigate. Users can create categories (with a name and icon) and payment transactions in minutes by selecting at least one category and entering a description and amount. The app then automatically categorizes expenses and tracks spending over time.
+**MoneyMate** is easy to use and navigate. Users can create categories (with a name and icon) and payment transactions in minutes by selecting at least one category and entering a description and amount. The app then automatically categorizes expenses and tracks spending over time.
 
-**YouPayment** is the perfect budget app for anyone who wants to take control of their finances. It is easy to use and offers a variety of features to help users manage their budget successfully.
+**MoneyMate** is the perfect budget app for anyone who wants to take control of their finances. It is easy to use and offers a variety of features to help users manage their budget successfully.
 
 ---
 
