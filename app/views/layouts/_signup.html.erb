@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Budget App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= yield :stylesheets %>
+  <%= stylesheet_link_tag "custom", media: 'all' %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+  <%= javascript_importmap_tags %>
+</head>
+<body class="bg-light">
+  <header>
+    <nav>
+      <div class="container-fluid top">
+        <div class="row">
+          <div class="col-2">
+            <a href="/landing" class="text-white">
+              <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
+          <div class="col-7">
+            <h1 class="text-center text-white">Register</h1>
+          </div>
+          <div class="col-3 d-flex justify-content-end">
+            <button type="submit" class="btn text-white">Next</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <%= yield %>
+  </div>
+</body>
+</html>

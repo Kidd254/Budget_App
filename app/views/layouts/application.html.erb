@@ -7,10 +7,51 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= yield :stylesheets %>
+    <%= stylesheet_link_tag "custom", media: 'all' %>
+    <% if controller_name == "categories" %>
+  <%= stylesheet_link_tag "categories", media: "all" %>
+<% end %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="<%= controller_name == 'categories' ? 'categories-background' : '' %>">
+    <% if user_signed_in? %>
+      <header>
+        <nav>
+          <div class="container-fluid pt-2 top">
+            <div class="row">
+              <div class="col-2">
+                <div class="menu-icon mt-1">
+                  <i class="fa-solid fa-bars text-white bar"></i>
+                </div>
+              </div>
+              <div class="col-7">
+                <h1 class="text-center text-white">TRANSACTIONS</h1>
+              </div>
+              <div class="col-3 d-flex justify-content-end">
+                <div class="search-icon">
+                  <i class="fa-solid fa-magnifying-glass fa-beat text-white bar"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+    <% end %>
+
     <%= yield %>
+
+    <div class="container">
+      <div class="col-md-12 col-12 text-right d-flex justify-content-end">
+        <% if user_signed_in? %>
+          <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn btn-light btn-sm" %>
+        <% else %>
+        <% end %>
+      </div>
+    </div>
   </body>
 </html>

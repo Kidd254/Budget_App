@@ -1,6 +1,9 @@
 require_relative "boot"
 
 require "rails/all"
+# config/application.rb
+require 'devise'
+
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -15,6 +18,7 @@ module BudgetApp
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
+    config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")

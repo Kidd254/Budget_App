@@ -1,0 +1,59 @@
+<% content_for :page_title, "Sign up" %>
+
+<%= render layout: 'layouts/signup' do %>
+  <div class="container">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <div class="profile-picture">
+          <%= image_tag("default_profile_image.png", id: "profile-preview", class: "profile-image") %>
+          <%= f.label :upload_picture, class: "file-label" %>
+          <%= f.file_field :avatar, accept: "image/*", onchange: "loadProfileImage(this)" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= f.label :full_name %><br />
+        <%= f.text_field :full_name, autofocus: true, autocomplete: "name" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="actions mb-3 mt-3">
+        <%= f.submit "Sign up" %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= render "devise/shared/links" %>
+<% end %>
+
+
+<script>
+  function loadProfileImage(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $('#profile-preview').attr('src', e.target.result);
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
