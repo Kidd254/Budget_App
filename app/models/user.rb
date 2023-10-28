@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, length: { minimum: 6 }
   validates :full_name, presence: true, length: { minimum: 2 }
+  validates :password, confirmation: true
+  validates :password_confirmation, presence: true, on: :create
 end

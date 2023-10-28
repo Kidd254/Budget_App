@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  belongs_to :author, class_name: 'User'
+  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   has_many :payments
   validates :description, presence: true
   validate :unique_name_and_icon_within_user
