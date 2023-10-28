@@ -97,9 +97,9 @@ To see the application working live, you can click on the following link that co
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## 🔭 Walk through video <a name="walk-through-video">https://drive.google.com/file/d/1rQrJJRVsSjTfkVyybk86gdCAy8AkCiRb/view?usp=drive_link</a>
+## 🔭 Walk through video <a name="walk-through-video"></a>
 
-<a href="">Video presentation of the Project</a>
+<a href="https://drive.google.com/file/d/1rQrJJRVsSjTfkVyybk86gdCAy8AkCiRb/view?usp=drive_link">Video presentation of the Project</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
