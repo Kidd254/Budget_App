@@ -30,7 +30,6 @@ RSpec.describe PaymentsController, type: :controller do
 
       before { sign_in user }
 
-
       it 'redirects to the category page' do
         post :create, params: valid_params
 
