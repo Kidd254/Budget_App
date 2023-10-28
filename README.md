@@ -92,7 +92,7 @@
 
 To see the application working live, you can click on the following link that contains the demo version:
 
-- [YouPayment App - Live Demo](https://budget-app-v4rw.onrender.com/)
+- [MoneyMate App - Live Demo](https://budget-app-v4rw.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
