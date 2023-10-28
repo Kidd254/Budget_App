@@ -1,8 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h1><b>YouPayment | MoneyMate App</b></h1>
-  <img src="app/assets/images/app-logo.png" width="200px" height="200px">
+  <h1><b> | MoneyMate App</b></h1>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -98,7 +97,7 @@ To see the application working live, you can click on the following link that co
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## 🔭 Walk through video <a name="walk-through-video"></a>
+## 🔭 Walk through video <a name="walk-through-video">https://drive.google.com/file/d/1rQrJJRVsSjTfkVyybk86gdCAy8AkCiRb/view?usp=drive_link</a>
 
 <a href="">Video presentation of the Project</a>
 
